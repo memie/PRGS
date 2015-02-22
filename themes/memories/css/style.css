@@ -1,0 +1,154 @@
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,div.paragraph,blockquote,fieldset,input{ margin:0; padding:0; }
+ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input{ margin:0; padding:0; }
+ ul{ list-style:none; }
+ fieldset{ border:0; }
+ a img{ border:0; }
+ .clear{ clear:both; }
+ body { background: #421107 url(../images/bodybg.jpg) bottom center no-repeat; font-family: Georgia, arial, sans-serif; font-size:12px; color:#666666; height: 100%; margin:0; padding:0; }
+ a{ color: #421107; text-decoration: none; }
+ div.paragraph { line-height: 170%; color: #222222; font-size: 13px; padding: 5px 0px 5px 0px; }
+ p { line-height: 170%; color: #222222; font-size: 13px; padding: 5px 0px 5px 0px; }
+ h1 { font-size:30px; font-weight:bold; color:#2d1300; line-height:1.5; padding: 5px 0px 5px 0px; }
+ h2 { font-size:30px; color:#2d1300; font-family: Georgia, arial, sans-serif; line-height:1.5; font-weight: normal; padding: 5px 0px 5px 0px; }
+ #wrapper { background: url(../images/wrapperbg.jpg) top center no-repeat; }
+ #container{ width: 960px; margin: 0 auto; background: url(../images/containerbg.jpg) top no-repeat; }
+ .title{ width: 507px; height: 131px; float: left; padding: 0px 0px 46px 153px; font-size: 36px; }
+ .title, .title a { color: #FFCC00; }
+ #header{ width: 240px; height: 160px; float: left; z-index: 1; }
+ .wsite-header{ background: url(../images/default_header.jpg) no-repeat; }
+ #navigation{ font-family: Georgia; position: relative; width: 915px; height: 52px; z-index: 2; clear: both; padding: 30px 0px 0px 45px; }
+ #navigation li{ float: left; z-index: 2; padding: 0px 45px 0px 0px; }
+ #navigation li a{ position: relative; display: block; color: #dba963; font-size: 18px; z-index: 2; font-variant: small-caps; text-decoration: none; }
+ #navigation li.active a{ color:#f4cf9f; }
+ #navigation li a:hover{ color: #f4cf9f; text-decoration: underline; }
+ #navigation li#active a{ color: #f4cf9f; text-decoration: underline; }
+ #wsite-menus .wsite-menu-wrap { z-index: 5000; }
+ #wsite-menus .wsite-menu { padding: 0; margin: 0; list-style: none; }
+ #wsite-menus .wsite-menu li { float: left; clear: left; width: 168px; text-align: left; }
+ #wsite-menus .wsite-menu li a { position: relative; display: block; width: 150px; background: #d7a86d; border-top: none; border-bottom: 1px solid #421107; border-right: none; border-left: none; text-decoration: none; font-size: 12px; font-weight: normal; line-height:1; padding: 8px 6px 8px 12px; color: #2d1300; }
+ #wsite-menus .wsite-menu li a:hover { background: #421107; color: #dba963; }
+ #content{ width: 768px; clear: both; height:auto !important; min-height:600px; padding: 60px 96px 10px 96px; background: url(../images/contenttop.jpg) top no-repeat; }
+ #contenttop{ width: 960px; background: url( ../images/contentbg.jpg) repeat-y; }
+ #contentbtm{ width: 960px; padding: 0px 0px 145px 0px; background: url(../images/contentbtm.jpg) bottom no-repeat; }
+ #footer{ width: 900px; font-size: 16px; font-weight: bold; text-align: center; padding: 30px 30px 10px 30px; margin: 0px 0px 10px 0px; }
+ #footer, #footer div.paragraph{ color: #dba963; }
+ #footer, #footer p{ color: #dba963; }
+ #footer a{ color: #f4cf9f; text-decoration: underline; }
+
+div.paragraph ul, div.paragraph ol { padding-left: 25px !important; margin: 5px 0 !important; overflow:hidden; }
+div.paragraph li { padding-left: 5px !important; margin: 3px 0 0 !important; }
+div.paragraph ul, div.paragraph ul li { list-style: disc outside !important; }
+div.paragraph ol, div.paragraph ol li { list-style: decimal outside !important; }
+
+#wsite-content div.paragraph, #wsite-content p, #wsite-content .product-description, .blog-sidebar div.paragraph, .blog-sidebar p, .wsite-form-field label, .wsite-form-field label {}
+#wsite-content h2, #wsite-content .product-title, .blog-sidebar h2{}
+#wsite-title{}
+
+/*Detailview*/
+
+.detail-view
+{
+	border-top: 1px solid #C1DAD7;
+	width: 100%;
+}
+
+.detail-view .even th,
+.detail-view .odd th{
+	font: normal 16px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #ffffff;
+	padding: 6px 12px 6px 12px;
+	border: 1px solid #800000;
+	background-color: #d15c05;
+	width: 17%;
+	text-align: left !important;
+}
+
+.detail-view .title th {
+	background-color: #b90000;
+	border-left: 1px solid #800000;
+	border-top: 1px solid white;
+	border-bottom: 1px solid #800000;
+	border-right: 1px solid #800000;
+	
+}
+
+.detail-view tr.odd td{
+	background-color: #ffffff!important;
+}
+
+.even td, .odd td{
+	font: normal 16px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	padding: 6px 12px 6px 12px;
+	color: #4F6B72;
+	border: 1px solid #800000!important;
+}
+
+.grid-view table.items tr.even {
+    background: #edd6cb ;
+}
+.grid-view table.items tr.odd {
+    background: #edd6cb ;
+}
+.grid-view table.items tr.selected {
+    background: none repeat scroll 0 0 #eecd11;
+}
+.grid-view table.items tr:hover {
+    background: none repeat scroll 0 0 #f8eeb6;
+}
+
+.grid-view table.items th, .grid-view table.items td {
+    font-size: 1.0em;
+    padding: 0.5em;
+	text-align: left !important;
+}
+
+.grid-view .summary {
+    margin: 0 0 5px;
+    text-align: right;
+}
+
+.grid-view table.items {
+    background: white;
+    border: 1px solid #D0E3EF;
+    border-collapse: collapse;
+    width:100%;
+}
+.grid-view .filters {
+    border-bottom: 1px solid #C1DAD7;
+}
+.grid-view .filters td {
+    border: 1px solid #C1DAD7 !important;
+}
+.grid-view .filters input,.grid-view .filters select{
+    border: 1px solid #D0E3EF;
+    border: 1px solid #CCCCCC;
+    width: 100%;
+    background: #FDFDFD;
+}
+
+.grid-view td {
+   
+}
+
+.grid-view table.items th {
+    cursor: pointer;
+	background: #800000! important;
+	border: 1px solid #800000 !important;
+	padding: 6px;
+}
+.grid-view table.items th a {
+    color: #ffffff!important;
+    font: 14px "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;    
+    font-weight: bold;
+    text-decoration: none;
+}
+.grid-view table.items th a:hover {
+    color: #5E7E86;
+}
+.search-form table {
+	width: 50%;
+}
+
+.search-form input[type="text"], .search-form select {
+	width:300px;
+}
