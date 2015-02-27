@@ -20,112 +20,72 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'name'); ?>
+		<?php echo $form->labelEx($model,'title'); ?>
+		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>50)); ?>
+		<?php echo $form->error($model,'title'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('size'=>60,'maxlength'=>100)); ?>
-		<?php echo $form->error($model,'email'); ?>
+		
+		<div class="row">
+		<?php echo $form->labelEx($model,'address'); ?>
+		<?php echo $form->textField($model,'address',array('size'=>45,'maxlength'=>200)); ?>
+		<?php echo $form->error($model,'address'); ?>
 	</div>
-
-	<div class="row">
+		<div class="row">
+		<?php echo $form->labelEx($model,'businesshours'); ?>
+		<?php echo $form->textField($model,'businesshours',array('size'=>45,'maxlength'=>200)); ?>
+		<?php echo $form->error($model,'businesshours'); ?>
+	</div>
+		<div class="row">
 		<?php echo $form->labelEx($model,'phone'); ?>
-		<?php echo $form->textField($model,'phone',array('size'=>45,'maxlength'=>45)); ?>
+		<?php echo $form->textField($model,'phone',array('size'=>45,'maxlength'=>10)); ?>
 		<?php echo $form->error($model,'phone'); ?>
 	</div>
-
-
+		
 	<div class="row">
-		<?php echo $form->labelEx($model,'note'); ?>
-		<?php echo $form->textArea($model,'note',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'note'); ?>
+		<?php echo $form->labelEx($model,'description'); ?>
+		<?php echo $form->textArea($model,'description',array('rows'=>6, 'cols'=>255)); ?>
+		<?php echo $form->error($model,'description'); ?>
 	</div>
-
-	<div class="row">
-		 <?php   echo $form->labelEx($model,'date');  //ใส่ label ของ form ?>
-		 
-		 <?php $this->widget(
-		'zii.widgets.jui.CJuiDatePicker', 
-		array(
-			'attribute'=>'date',
-			'model'=>$model,
-			'value'=>$model->date,
-			'options'=>array( // effect
-				'showAnim'=>'fadeIn', //'fold', 'slideDown','fadeIn','blind,...
-				//'showButtonPanel'=>true,
-				'dateFormat'=>'dd-mm-yy',
-				'minDate'=>'date("Y-m-d")', //fecha minimal
-				'changeMonth'=>true,
-				'changeYear'=>true	,
-				'yearRange'=>'2014:2015',
-			),'htmlOptions'=>array(
-		'style'=>''
-),
 	
-)
-);
-		 ?>
-		<?php echo $form->error($model,'date'); ?>
+		<div class="row">
+		<?php echo $form->labelEx($model,'link map'); ?>
+		<?php echo $form->textField($model,'link map',array('size'=>45,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'link map'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'time'); ?>
-		<?php echo $form->dropDownList ($model,'time', array (
+	
+	  <div class="row">
+		<?php echo $form->labelEx($model,'image'); ?>
+		<?php echo $form->textField($model,'image',array('size'=>60,'maxlength'=>200)); ?>
+		<?php echo $form->error($model,'image'); ?>
+	</div>
+	
+		<div class="row">
+		<?php echo $form->labelEx($model,'type'); ?>
+		<?php echo $form->dropDownList ($model,'type', array (
 				
-				'01:00 AM - 02:00 AM'=>'01:00 AM - 02:00 AM',
-				'03:00 AM - 04:00 AM'=>'03:00 AM - 04:00 AM',
-				'05:00 AM - 06:00 AM'=>'05:00 AM - 06:00 AM',
-				'07:00 AM - 08:00 AM'=>'07:00 AM - 08:00 AM',
-				'09:00 AM - 10:00 AM'=>'09:00 AM - 10:00 AM',
-				'11:00 AM - 12:00 PM'=>'11:00 AM - 12:00 PM',
-				'01:00 PM - 02:00 PM'=>'01:00 PM - 02:00 PM',
-				'03:00 PM - 04:00 PM'=>'03:00 PM - 04:00 PM',
-				'05:00 PM - 06:00 PM'=>'05:00 PM - 06:00 PM',
-				'07:00 PM - 08:00 PM'=>'07:00 PM - 08:00 PM',
-				'09:00 PM - 10:00 PM'=>'09:00 PM - 10:00 PM',
-				'11:00 PM - 00:00 AM'=>'11:00 PM - 00:00 AM',
-					), array ('prompt' => 'Please Select Time' 
+				'1'=>'ไทย-พุทธ',
+				' 2'=>'ไทย-มุสลิม',
+			
+				), array (	'prompt' => 'เลือกประเภทร้าน' 
 		) ); ?>
-		<?php echo $form->error($model,'time'); ?>
-	</div>
-	<div class="row">
-		<?php echo $form->labelEx($model,'tb_num'); ?>
-		<?php echo $form->dropDownList ($model,'tb_num', array (
-				
-				'VIP 1'=>'VIP 1',
-				'VIP 2'=>'VIP 2',
-				'VIP 3'=>'VIP 3',
-				'VIP 4'=>'VIP 4',
-				'VIP 5'=>'VIP 5',
-				'VIP 6'=>'VIP 6',
-				'VIP 7'=>'VIP 7',
-				'VIP 8'=>'VIP 8',
-				'VIP 9'=>'VIP 9',
-				'VIP 10'=>'VIP 10',
-				), array (	'prompt' => 'Please Select Table Number' 
-		) ); ?>
-		<?php echo $form->error($model,'tb_num'); ?>
-	</div>
-	<div class="row">
-		<?php echo $form->labelEx($model,'occasion'); ?>
-		<?php echo $form->dropDownList ($model,'occasion', array (
+		<div class="row">
+		<?php echo $form->labelEx($model,'score'); ?>
+		<?php echo $form->dropDownList ($model,'score', array (
 				
 				'1'=>'1',
-				' 2'=>' 2',
-				' 3'=>'3',
-				' 4'=>' 4',
-				' 5'=>' 5',
-				' 6'=>' 6',
-				' 7'=>' 7',
-				' 8'=>' 8',
-				' 9'=>' 9',
-				' 10'=>'10',
-				
-				), array (	'prompt' => 'Please Select Number of People' 
+				'2'=>'1.5',
+				'3'=>'2',
+				'4'=>'2.5',
+				'5'=>'3',
+				'6'=>'3.5',
+				'7'=>'4',
+				'8'=>'4.5',
+				'9'=>'5',
+			
+				), array (	'prompt' => 'ให้คะแนนร้าน' 
 		) ); ?>
+		<?php echo $form->error($model,'occasion'); ?>
+	</div>
 		<?php echo $form->error($model,'occasion'); ?>
 	</div>
 

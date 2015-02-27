@@ -16,7 +16,7 @@ $this->menu=array(
 );
 ?>
 <br><br><br>
-<h1 style="color:#804000"><b>Update Menu </b></h1>
+<h1 style="color:#2f97ff"><b>แก้ไขข้อมูลร้าน ลำดับที่  <?php echo $model->id; ?></b></h1>
 
 
 <?php $this->renderPartial('_form', array('model'=>$model,'type'=>$type)); ?>

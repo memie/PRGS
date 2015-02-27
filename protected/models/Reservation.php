@@ -34,16 +34,15 @@ class Reservation extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name,datetime,status, email,phone,occasion,tb_num,date,time,by', 'required'),
-			array('name, email, phone,email,tb_num', 'length', 'max'=>100),
-			array('phone', 'length', 'max'=>10, 'min'=>10),
-			array('note,datetime, date, time', 'safe'),
-			array('email', 'email'),
-			array('phone', 'numerical', 'integerOnly'=>true),
-			
+			array('price,title,type_id','required'),
+			array('image', 'length', 'max'=>45),
+			array('title', 'length', 'max'=>150),
+			array('price, datetime', 'safe'),
+			//array('price', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name,datetime, email, phone, occasion,tb_num, note, date, time, status, by', 'safe', 'on'=>'search'),
+			array('id, image, title, price, name,phone, datetime,type_id', 'safe', 'on'=>'search'),
+	
 		);
 	}
 
@@ -55,7 +54,8 @@ class Reservation extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-		);
+				'type' => array(self::BELONGS_TO, 'Type', 'type_id')
+		);;
 	}
 
 	/**
@@ -63,7 +63,7 @@ class Reservation extends CActiveRecord
 	 */
 	public function attributeLabels()
 	{
-		return array(
+		/*return array(
 			'id' => 'ID',
 			'datetime' => 'Reservation Datetime',
 			'name' => 'Name',
@@ -76,6 +76,18 @@ class Reservation extends CActiveRecord
 			'status' => 'Status',
 			'by' => 'Confirm By',
 			'tb_num' => 'Table Number',
+		);*/
+		return array(
+				'id' => 'ID',
+				'image' => 'Image',
+				'title' => 'nameres',
+				'description' => 'dddd',
+				//'address' => 'Title',
+				//'businesshours' => 'description',
+				//'phone' => 'Title',
+				//'score' => 'Phone',
+				'datetime' => 'Date time',
+				'type_id' => 'Type',
 		);
 	}
 
@@ -95,25 +107,24 @@ class Reservation extends CActiveRecord
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
-	$criteria=new CDbCriteria(array('order'=>'date ASC','limit'=>10));
+	//$criteria=new CDbCriteria(array('order'=>'date ASC','limit'=>10));
 	
+		$criteria=new CDbCriteria;
+
 		$criteria->compare('id',$this->id);
+		$criteria->compare('image',$this->image,true);
+		$criteria->compare('title',$this->title,true);
+		$criteria->compare('description',$this->description,true);
 		$criteria->compare('datetime',$this->datetime,true);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('email',$this->email,true);
-		$criteria->compare('phone',$this->phone,true);
-		$criteria->compare('note',$this->note,true);
-		$criteria->compare('occasion',$this->occasion,true);
-		$criteria->compare('date',$this->date,true);
-		$criteria->compare('time',$this->time,true);
-		$criteria->compare('status',$this->status,true);
-		$criteria->compare('by',$this->by,true);
-		$criteria->compare('tb_num',$this->tb_num,true);
+		$criteria->compare('type_id',$this->type_id,true);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+				'pagination'=>array(
+						'pageSize'=>8,
+				),
 		));
 	}
-	protected function beforeSave()
+	/*protected function beforeSave()
 	{
 		$this->date=date('Y-m-d', strtotime($this->date));
 		//$this->time=date("H:i",(strtotime($this->time)));   
@@ -128,7 +139,7 @@ class Reservation extends CActiveRecord
 		
 		return TRUE;
 	}
-	
+	*/
 	
 	/**
 	 * Returns the static model of the specified AR class.

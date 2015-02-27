@@ -28,14 +28,14 @@ class Menu extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('price,title,type_id','required'),
+			array('title,address,business_hours,type_id','required'),
 			array('image', 'length', 'max'=>45),
 			array('title', 'length', 'max'=>150),
-			array('price, datetime', 'safe'),
+			array('phone, datetime', 'safe'),
 			//array('price', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, image, title, price, datetime,type_id', 'safe', 'on'=>'search'),
+			array('id, image, title,address, phone,business_hours,score, datetime,type_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -49,6 +49,7 @@ class Menu extends CActiveRecord
 		return array(
 				'type' => array(self::BELONGS_TO, 'Type', 'type_id')
 		);
+		
 	}
 
 	/**
@@ -57,12 +58,17 @@ class Menu extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id' => 'ID',
-			'image' => 'Image',
-			'title' => 'Title',
-			'price' => 'Price',
-			'datetime' => 'Date time',
-			'type_id' => 'Type',
+			'id' => 'ลำดับที่',
+			'image' => 'รูปภาพ',
+			'title' => 'ชื่อร้าน',
+			'address' => 'ที่ตั้ง',
+			'business_hours' => 'เปิดปิดเวลา',
+			'phone' => 'เบอร์โทรศัพท์',
+			'score' => 'คะแนนความประทับใจ',
+			'datetime' => 'วันที่โพสต์',
+			'type_id' => 'ประเภท',
+			'latitude' => 'ละติจูด',
+			'longitude' => 'ลองติจูด',
 		);
 	}
 
@@ -88,7 +94,10 @@ class Menu extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('image',$this->image,true);
 		$criteria->compare('title',$this->title,true);
-		$criteria->compare('price',$this->price,true);
+		$criteria->compare('address',$this->address,true);
+		$criteria->compare('business_hours',$this->business_hours,true);
+		$criteria->compare('phone',$this->phone,true);
+		$criteria->compare('score',$this->score,true);
 		$criteria->compare('datetime',$this->datetime,true);
 		$criteria->compare('type_id',$this->type_id,true);
 		return new CActiveDataProvider($this, array(

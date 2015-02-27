@@ -192,7 +192,7 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 }
 
 .detail-view .title th {
-	background-color: #EDF3F3;
+	background-color: #e2e2e2;
 	border-left: 1px solid #C1DAD7;
 	border-top: 1px solid white;
 	border-bottom: 1px solid #C1DAD7;
@@ -200,24 +200,24 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 }
 
 .detail-view tr.odd td{
-	background-color: #ffffff!important;
+	background-color: #c4ecff!important;
 }
 
 .even td, .odd td{
 	font: normal 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
 	padding: 6px 12px 6px 12px;
 	color: #000000;
-	border: 1px solid #ffffff!important;
+	border: 1px solid #e2e2e2!important;
 }
 
 .grid-view table.items tr.even {
-    background: #ff962d ;
+    background: #e2e2e2 ;
 }
 .grid-view table.items tr.odd {
-    background: #ffff80 ;
+    background: #e2e2e2 ;
 }
 .grid-view table.items tr.selected {
-    background: none repeat scroll 0 0 #75baff;
+    background: none repeat scroll 0 0 #ffffff;
 }
 .grid-view table.items tr:hover {
     background: none repeat scroll 0 0 #ffffff;
@@ -236,15 +236,15 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 
 .grid-view table.items {
     background: white;
-    border: 1px solid #D0E3EF;
+    border: 1px solid #e2e2e2;
     border-collapse: collapse;
     width:1000px;
 }
 .grid-view .filters {
-    border-bottom: 1px solid #C1DAD7;
+    border-bottom: 1px solid #e2e2e2;
 }
 .grid-view .filters td {
-    border: 1px solid #C1DAD7 !important;
+    border: 1px solid #000000 !important;
 }
 .grid-view .filters input,.grid-view .filters select{
     border: 1px solid #D0E3EF;
@@ -259,12 +259,12 @@ div.wide.form .buttons, div.wide.form .hint, div.wide.form .errorMessage
 
 .grid-view table.items th {
     cursor: pointer;
-	background: #ff8000! important;
-	border: 1px solid #ff8000!important;
+	background: #c0c0c0! important;
+	border: 1px solid #cecece!important;
 	padding: 6px;
 }
 .grid-view table.items th a {
-    color: #ffffff!important;
+    color: #000000!important;
     font: 14px "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;    
     font-weight: bold;
     text-decoration: none;

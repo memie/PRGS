@@ -52,7 +52,7 @@ class Type extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
+			'name' => 'ประเภท',
 		);
 	}
 

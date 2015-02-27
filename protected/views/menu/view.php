@@ -19,12 +19,17 @@ $this->menu=array(
 ?>
 <br><br><br>
 
-<h1 style="color:#804000"><b>View Menu </b></h1>
-
+<h1 style="color:#2f97ff"><b>ดูข้อมูลร้าน ลำดับที่  <?php echo $model->id; ?></b></h1>
+<?php echo CHtml::button('กลับไปก่อนหน้านี้', array('submit' => array('menu/admin'))); ?>
+<br>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		
+			'title',
+			'address',
+			'business_hours',
+			'phone',
+			'score',
 		array (
 		'name' => 'menu.image',
 		'type' => 'html',
@@ -36,8 +41,9 @@ $this->menu=array(
 				'height' => 105
 		) )
 ),
-		'price',
-		'title',
+		'type.name',
+	    'latitude',
+		'longitude',
 		'datetime',
 
 ),

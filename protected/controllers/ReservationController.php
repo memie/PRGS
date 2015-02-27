@@ -41,7 +41,7 @@ class ReservationController extends Controller
         
        return array(
         		array('allow',  // allow all users to perform 'index' and 'view' actions
-        				'actions'=>array('create','view','status'),
+        				'actions'=>array('index','view','type'),
         				'users'=>array('*'),
         		),
            array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -79,27 +79,45 @@ class ReservationController extends Controller
 	{
 		
 		$model=new Reservation;
+		$type=new Type;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
         
-		$model->status = "Wait";
+		//$model->status = "Wait";
 		$model->by = Yii::app()->user->name;
 		$model->datetime = date('Y.m.d H.i.s');
-		$model->time = date('H:i');
+		//$model->time = date('H:i');
 		
 		if(isset($_POST['Reservation']))
 		{
 			$model->attributes=$_POST['Reservation'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$valid = $model->validate ();
+	
+			if ($image = CUploadedFile::getInstance ( $model, 'image' )) {
+				// path for file upload
+				$path = Yii::getPathOfAlias ( 'webroot' ) . '/picture/';
+				// use image name as username
+				$filename = $model->datetime . '_img' . '.' . $image->getExtensionName ();
+				// uploaded image to path
+				$image->saveAs ( $path . $filename );
+			} else
+				// this for no image file upload
+				$filename = 'noimage.jpg';
+			// set another user attribute
+			$model->image = $filename;
+			$model->id = $model->id;
+			if($valid){
+				if($model->save())
+					$this->redirect(array('view','id'=>$model->id));
+			}
 		}
-
+	
 		$this->render('create',array(
-			'model'=>$model,
-		));
-	}
-
+				'model'=>$model,
+				'type'=>$type,
+					
+		));}
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.

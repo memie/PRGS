@@ -7,6 +7,7 @@ $this->breadcrumbs=array(
 	$model->id,
 );
 
+
 $this->menu=array(
 	array('label'=>'List User', 'url'=>array('index')),
 	array('label'=>'Create User', 'url'=>array('create')),

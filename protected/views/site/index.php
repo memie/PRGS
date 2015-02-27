@@ -1,6 +1,6 @@
 <marquee>
 	<h2 style="color: #2f97ff">
-		<b>ยินดีต้อนรับสู่ <i><?php echo CHtml::encode(Yii::app()->name); ?></b></i>
+		<font face=angsananew size=5><i><b>ยินดีต้อนรับสู่    <?php echo CHtml::encode(Yii::app()->name); ?></b></i></font>
 	</h2>
 </marquee>
 

@@ -71,7 +71,6 @@ class MenuController extends Controller
 	public function actionCreate()
 	{
 		$model=new Menu;
-		
 		$type=new Type;
 	
 		// Uncomment the following line if AJAX validation is needed

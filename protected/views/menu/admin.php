@@ -25,15 +25,15 @@ $('.search-form form').submit(function(){
 });
 ");
 ?><br><br><br>
-<h1 style="color:#804000"><b>Manage Menu</b></h1>
+<h1 style="color:#2f97ff"><b>จัดการข้อมูลร้าน </b></h1>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('คลิกเพื่อค้นหา','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
 </div><!-- search-form --><br>
-<br><?php echo CHtml::button('Add Menu', array('submit' => array('menu/create'))); ?>
+<br><?php echo CHtml::button('เพิ่มร้าน', array('submit' => array('menu/create'))); ?>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'menu-grid',
@@ -43,16 +43,25 @@ $('.search-form form').submit(function(){
 	//'filter'=>$model,
 		
 	'columns'=>array(
+			'id',
+			'title',
+			'address',
+			'business_hours',
+			'phone',
+			'latitude',
+			'longitude',
+			'score',
+			
 		
 	array(
+			
 		'type' => 'raw',
+			
 		'name'=> 'image',
 		'value' => 'CHtml::image("'.Yii::app()->request->baseUrl.'/picture/$data->image", "image" ,array("width"=>120))',
 		'filter'=> false,
 ),
-		'title',
-		//'detail',
-		'price',
+		'type.name',
 		'datetime',
 		
 		array(

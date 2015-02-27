@@ -25,10 +25,8 @@ $('.search-form form').submit(function(){
 });
 ");
 ?><br><br><br>
-<h1 style="color:#804000"><b>Manage Reservations</b></h1>
-<img height='400px' width='600px'
-		src='<?php echo Yii::app()->theme->baseUrl; ?>/img/z.jpg'>
- <br> <br>
+<h1 style="color:#2f97ff"><b>จัดการร้าน ไทย-พุทธ</b></h1>
+
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
@@ -36,7 +34,6 @@ $('.search-form form').submit(function(){
 )); ?>
 </div><!-- search-form -->
 
-<br>
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'reservation-grid',
 		'template'=>'{items}{pager}',
@@ -48,22 +45,69 @@ $('.search-form form').submit(function(){
 
 	//'filter'=>$model,
 	'columns'=>array(
-		'datetime',
-		'name',
-		'email',
+		'id',
+		'title',
+		//'description',
+		'address',
+		'businesshours',
 		'phone',
-		'occasion',
-		'note', 
-		'tb_num',
-		'date',
-		'time',
-		'status',
+		'score',
+		'image',
+		'datetime',
+		//'name',
+		//'email',
+		//'phone',
+		//'occasion',
+		//'note', 
+		//'tb_num',
+		//'date',
+		//'time',
+		//'status',
 		
 		
 		
 		array(
 		'class'=>'CButtonColumn',
-		'htmlOptions'=>array('style'=>'width: 30px'),
+		'htmlOptions'=>array('style'=>'width: 50px'),
+		'template'=>'{update}',
+),
+	),
+)); ?>
+ <br> <br>
+ <h1 style="color:#2f97ff"><b>จัดการร้าน ไทย-มุสลิม</b></h1>
+<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<div class="search-form" style="display:none">
+<?php $this->renderPartial('_search',array(
+	'model'=>$model,
+)); ?>
+</div><!-- search-form -->
+
+
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'reservation-grid',
+		'template'=>'{items}{pager}',
+		'dataProvider' => $model->search ( '$model=>id', 'search', array (
+				'status' => $model->status = array('confirm','Wait'),
+
+
+		) ),
+
+	//'filter'=>$model,
+	'columns'=>array(
+		'id',
+		'title',
+		//'description',
+		'address',
+		'businesshours',
+		'phone',
+		'score',
+		'image',
+		'datetime',
+		
+		
+		array(
+		'class'=>'CButtonColumn',
+		'htmlOptions'=>array('style'=>'width: 50px'),
 		'template'=>'{update}',
 ),
 	),

@@ -9,26 +9,26 @@
 	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
-	<?php echo CHtml::encode($data->name); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('title')); ?>:</b>
+	<?php echo CHtml::encode($data->title); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('email')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
 	<?php echo CHtml::encode($data->email); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('phone')); ?>:</b>
-	<?php echo CHtml::encode($data->phone); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('score')); ?>:</b>
+	<?php echo CHtml::encode($data->score); ?>
 	<br />
 
 
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('note')); ?>:</b>
-	<?php echo CHtml::encode($data->note); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('link map')); ?>:</b>
+	<?php echo CHtml::encode($data->linkmap); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('date')); ?>:</b>
-	<?php echo CHtml::encode($data->date); ?>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('image')); ?>:</b>
+	<?php echo CHtml::encode($data->image); ?>
 	<br />
 
 	<?php /*

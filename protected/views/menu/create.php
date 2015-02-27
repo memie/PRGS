@@ -12,7 +12,7 @@ $this->menu=array(
 	array('label'=>'Manage Menu', 'url'=>array('admin')),
 );
 ?>
-<br><br>
-<h1 style="color:#804000"><b>Create Menu</b></h1>
+<br><br><br><br>
+<h1 style="color:#2f97ff"><b>Create Menu</b></h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model,'type'=>$type)); ?>

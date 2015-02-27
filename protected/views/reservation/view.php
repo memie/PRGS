@@ -19,7 +19,7 @@ $this->menu=array(
 ?>
 <br>
 
-<h1 style="color:#804000"><b> Reservation View #</b><?php echo $model->name; ?></h1>
+<h1 style="color:#2f97ff"><b> Restaurant View No.</b><?php echo $model->id; ?></h1>
 
 <?php $this->widget('bootstrap.widgets.TbButton', array(
     'label'=>'Back',
@@ -33,16 +33,15 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		
-		'name',
-		'email',
+		'id',
+		'title',
+		'description',
+		'address',
+		'businesshours',
 		'phone',
-	   'tb_num',
-		'note',
-		'date',
-		'time',
-		'status',
-		'occasion',
-		'by',
+		'score',
+		'image',
+		'datetime',
 	),
 )); ?>
 
